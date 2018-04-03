@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Rotate Image
+categories: leetcode
 ---
 
 # 问题
