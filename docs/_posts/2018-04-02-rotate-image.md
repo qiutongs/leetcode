@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Rotate Image
 ---
 
@@ -19,6 +18,9 @@ title: Rotate Image
     - 第一次是[0, n-1], offset = 0, 1, .... n-1
     - 第二次是[1, n-2], offset = 0, 1, .... n-3
     - 第三次是[2, n-3], offset = 0, 1, .... n-5
+
+## 复杂度
+时间O(n), 空间O(1)
 
 ## 我的代码
 
