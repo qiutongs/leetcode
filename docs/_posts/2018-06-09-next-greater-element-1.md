@@ -8,8 +8,9 @@ title: Next Greater Element I
 ## 总体思路
 - brute force: 需要O(n^2)时间，应该不是这道题的目的
 - 感觉排序应该不试用O(nLogN)，因为nums2的顺序不能改变
-- 这个问题的大问题是找出nums2中每个元素的next greater element。这个问题和daily-temperature类似
-  - 用stack来计算每个元素的next greater element
+- 这个问题的大问题是找出nums2中每个元素的next greater element（NGE）。这个问题和daily-temperature类似
+  - 用stack来计算每个元素的next greater element。 stack中元素意义：可能找到NGE但是还未找到。
+  这些元素应该是以非递增排列。
   - 用hash map来储存，用来给nums1查询用
 
 ## 复杂度
