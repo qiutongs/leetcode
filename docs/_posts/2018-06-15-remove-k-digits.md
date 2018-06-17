@@ -1,5 +1,6 @@
 ---
 title: Remove K Digits
+tags: stack
 ---
 
 ## 问题

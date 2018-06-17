@@ -1,5 +1,6 @@
 ---
 title: Simplify Path
+tags: stack
 ---
 
 ## 问题

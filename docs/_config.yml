@@ -16,7 +16,7 @@
 title: Qiutong's LeetCode
 email: songqt01@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  My view of leetcode world 
+  Qiutong's leetcode world
 baseurl: "/leetcode" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: null
@@ -27,6 +27,7 @@ markdown: kramdown
 theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 defaults:
   -
