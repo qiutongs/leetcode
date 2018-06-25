@@ -16,6 +16,7 @@ tags: backtrack
 
 
 ## 方案
+{% highlight java %}
 public List<List<Integer>> permuteUnique(int[] nums) {
     Arrays.sort(nums);
 

@@ -11,6 +11,7 @@ tags: recursion
 - 可以backtrack， TODO：还没实现
 
 ## 方案1
+{% highlight java %}
 public List<List<Integer>> permute(int[] nums) {
     if (nums.length == 0) return Collections.emptyList();
 
