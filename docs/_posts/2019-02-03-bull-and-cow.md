@@ -11,7 +11,7 @@ tags: Array
 
 ## 细节
 - 数字重复
-- 先排除掉exact match的情况
+- 先排除掉bull的情况, 再单独算cow的情况
 
 ## 方案
 
