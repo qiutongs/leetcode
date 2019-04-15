@@ -8,6 +8,13 @@
  *         next = null;
  *     }
  * }
+ *
+ * Basic idea:
+ * 1. if they meet:
+ * S1 + n * circle = 2 * S1
+ * 2. S1 = line + arc
+ * line + arc = n * circle
+ * line = n * circle - arc 
  */
 public class Solution {
     public ListNode detectCycle(ListNode head) {
