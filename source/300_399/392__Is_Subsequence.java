@@ -24,3 +24,11 @@ class Solution {
         return true;
     }
 }
+
+/*
+Follow up: pre-process t with some data structure fast for query.
+BF time is O(st)
+
+1. hashtable: character -> sorted index list in t
+time is O(s * log(t))
+*/
