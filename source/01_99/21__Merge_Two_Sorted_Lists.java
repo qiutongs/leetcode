@@ -6,7 +6,7 @@
  *     ListNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Solution1 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         // Initialize a dummy head for convinience.
         // The real head will be "dummyHead.next".
