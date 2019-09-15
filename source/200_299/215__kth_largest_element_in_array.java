@@ -1,3 +1,8 @@
+/*
+Time: O(n) average, O(n^2) worst
+
+https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array-set-2-expected-linear-time/
+*/
 class Solution {
     
     private static Random rand = new Random();
