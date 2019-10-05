@@ -27,8 +27,10 @@ class Solution {
 
 /*
 Follow up: pre-process t with some data structure fast for query.
-BF time is O(st)
 
-1. hashtable: character -> sorted index list in t
-time is O(s * log(t))
+- The time is O(|s| + |t|) for each one, with above approach. So it will be O(k(s + t))
+
+1. hashtable: 
+- character -> sorted index list in t
+- for each one, the time is O(|s| * log(|t|)), total is O(k(s * log(t)))
 */

@@ -4,11 +4,8 @@ After sort, say there is a subarray of duplicated value: 2,2,2,2,2,2...
 The output should only include ONCE '2', '22', '222', '2222', ....
 1. if not select 2 on current index, then never, go to next different value
 2. if select 2 on current index, we can go to next value (maybe duplicate)
-
-Note: when using the solution of Subsets 1: it will output the super set
-      if #2 also goes to next different value, it will output the subset (no duplcates at all)
 */
-class Solution {
+class Solution1 {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> result = new ArrayList<>(1 << nums.length);
 
@@ -36,5 +33,41 @@ class Solution {
         curSet.add(nums[curIndex]);
         backtrack(curSet, curIndex - 1, nums, output);
         curSet.remove(curSet.size() - 1);
+    }
+}
+
+/*
+  DFS: 
+ */
+class Solution2 {
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return Collections.emptyList();
+        }
+        
+        List<List<Integer>> result = new ArrayList<>();
+        
+        Arrays.sort(nums);
+        
+        dfs(result, new ArrayList<>(), nums, 0);
+        
+        return result;
+    }
+    
+    private void dfs(List<List<Integer>> result, List<Integer> curSet, int[] nums, int i) {
+        result.add(new ArrayList<>(curSet));
+        
+        int j = i;
+        
+        while(j < nums.length) {
+            curSet.add(nums[j]);
+            dfs(result, curSet, nums, j + 1);
+            curSet.remove(curSet.size() - 1);
+            
+            while(j < nums.length && nums[j] == nums[i]) {
+                j++;
+            }
+            i = j;
+        }
     }
 }

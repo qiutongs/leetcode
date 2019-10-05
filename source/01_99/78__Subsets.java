@@ -28,6 +28,7 @@ class Solution1 {
 
 /*
 Solve the subsets of first n-1 and add the nth element or not.
+This is BFS essentially.
 
 Note: this can be converted to iterative approach easily.
 */
@@ -82,5 +83,74 @@ class Solution3 {
         curSet.add(nums[curIndex]);
         backtrack(curSet, curIndex - 1, nums, output);
         curSet.remove(curSet.size() - 1);
+    }
+}
+
+/* 
+   DFS, one step at a time. Iterate on a full stack tree
+
+   [1, 4] = [1] -> [1] -> [1] -> [1, 4]
+ */
+class Solution4 {
+    public List<List<Integer>> subsets(int[] nums) {
+        if (nums == null) {
+            return Collections.emptyList();
+        }
+        
+        List<List<Integer>> results = new ArrayList<>();
+        List<Integer> curSet = new ArrayList<>();
+        
+        Arrays.sort(nums);
+        
+        dfs(results, curSet, nums, 0);
+        
+        return results;
+    }
+    
+    private void dfs(List<List<Integer>> results, List<Integer> curSet, int[] nums, int i) {
+        if (i == nums.length) {
+            results.add(new ArrayList<>(curSet));
+            return;
+        }
+        
+        // select
+        curSet.add(nums[i]);
+        dfs(results, curSet, nums, i + 1);
+        curSet.remove(curSet.size() - 1);
+        
+        // not select
+        dfs(results, curSet, nums, i + 1);
+    }
+}
+
+/* 
+   DFS, mutiple steps compared to solution 4. Faster than solution 4.
+
+   [1, 4] = [1] -> [1, 4]
+ */
+class Solution5 {
+    public List<List<Integer>> subsets(int[] nums) {
+        if (nums == null) {
+            return Collections.emptyList();
+        }
+        
+        List<List<Integer>> results = new ArrayList<>();
+        List<Integer> curSet = new ArrayList<>();
+        
+        Arrays.sort(nums);
+        
+        dfs(results, curSet, nums, 0);
+        
+        return results;
+    }
+    
+    private void dfs(List<List<Integer>> results, List<Integer> curSet, int[] nums, int i) {
+        results.add(new ArrayList<>(curSet));
+        
+        for (int j = i; j < nums.length; j++) {
+            curSet.add(nums[j]);
+            dfs(results, curSet, nums, j + 1);
+            curSet.remove(curSet.size() - 1);
+        }
     }
 }

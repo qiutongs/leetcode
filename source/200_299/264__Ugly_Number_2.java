@@ -1,5 +1,5 @@
 /*
-DP: leverage the math fact: An = min(Ai * 2, Aj * 4, Ak * 5)
+DP: leverage the math fact: An = min(Ai * 2, Aj * 3, Ak * 5)
 
 - conceptually, there are 3 list
 - in fact, there is only 1 list
